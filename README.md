@@ -16,7 +16,7 @@ The program options are as follows:
 
 Statements file has the following syntax:
 
-    <fdsm expression> => <Unix/Python commands separated by comma>;
+    <fdsm expression> => <Unix/Python commands separated by semicolon>;
     ...
     
 For example:
