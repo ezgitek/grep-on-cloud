@@ -31,15 +31,15 @@ For example:
 The expected behavior of the script above is:
     
     count = 0
-    $MATCHED = files which are created before 01.04.2002 and have names starting with A
+    $MATCHED = [files which are created before 01.04.2002 and have names starting with A]
     print $MATCHED
     remove $MATCHED
-    $MATCHED = files with name core or .o files
+    $MATCHED = [files with name "core". if they do not exist, .o files]
     remove $MATCHED
-    $MATCHED = .py files 
+    $MATCHED = [.py files] 
     count = count + 1
     remove $MATCHED
-    $MATCHED = directories with name "junk"
+    $MATCHED = [directories with name "junk"]
     remove $MATCHED
     print count
     
