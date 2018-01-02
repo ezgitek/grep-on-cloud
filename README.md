@@ -34,7 +34,7 @@ The expected behavior of the script above is:
     $MATCHED = [files which are created before 01.04.2002 and have names starting with A]
     print $MATCHED
     remove $MATCHED
-    $MATCHED = [files with name "core". if they do not exist, .o files]
+    $MATCHED = [files with name "core" or extension .o]
     remove $MATCHED
     $MATCHED = [.py files] 
     count = count + 1
