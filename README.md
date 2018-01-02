@@ -28,6 +28,21 @@ For example:
     /junk/ && directory => rm $MATCHED ;
     finish => {print count} ;
     
+The expected behavior of the script above is:
+    
+    count = 0
+    $MATCHED = files which are created before 01.04.2002 and have names starting with A
+    print $MATCHED
+    remove $MATCHED
+    $MATCHED = files with name core or .o files
+    remove $MATCHED
+    $MATCHED = .py files 
+    count = count + 1
+    remove $MATCHED
+    $MATCHED = directories with name "junk"
+    remove $MATCHED
+    print count
+    
 The statements on the right can be either python or unix statements. Python statements are in curly brackets ({}). 
 
 The statements on the left are in fdsm syntax which are patterns that will match file properties. The patterns are as follows:
@@ -40,7 +55,7 @@ file, directory | if a path is a directory or a file
 c/\<regex-statement\>/ | there is a match in file content
 o/\<regex-statement\>/ | owner of the item matches
 p/\<regex-statement\>/ | permission type of the item matches
-d/\<regex-statement\>/[b/a] | date of the item matches (options: before/after)
+d/\<regex-statement\>/[b/a] | creation date of the item matches (options: before/after)
 s/\<regex-statement\>/[l] | size of the item matches (options: larger)
 readable, writeable, executable | checks these permissions on the item
 
